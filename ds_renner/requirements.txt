@@ -1,0 +1,19 @@
+#básicas
+pandas==2.2.3
+numpy==2.1.2
+
+# Pré-processamento e Modelagem
+mlforecast==1.0.2
+sklearn==0.1.3
+imbalanced-learn==0.13.0
+lightgbm==4.6.0
+scipy==1.15.1
+xgboost==2.1.4
+statsmodels==0.14.4
+holidays==0.48 
+window_ops==0.0.15
+tqdm==4.67.1
+
+# Visualização de dados
+seaborn==0.13.2
+matplotlib==3.10.1
