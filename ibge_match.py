@@ -6,6 +6,7 @@ from datetime import datetime
 
 # dados originais 
 df = pd.read_csv("df_vendas.csv", sep=";")
+#df.xmun = df.xmun.str.replace("TOLEDO", "TOLEDO (PR)")
 lista_municipio = pd.read_excel("lista_municipio.xlsx")
 df = df.merge(lista_municipio[['xmun', 'nome_correto']], on='xmun', how='left')
 # normalizar os nomes dos municipios e adicionando codigo
@@ -74,14 +75,24 @@ def consultar_lista(municipios_cod_ibge):
 todos = consultar_lista(municipios)
 
 #adicinar uma coluna data
-df_custeio = todos[["codIbge", "VlCusteio"]].groupby(["codIbge"]).agg(
-    soma_custeio = ("VlCusteio", "sum")
+todos["data"] = pd.to_datetime(
+    dict(year=todos["AnoEmissao"], month=todos["MesEmissao"], day=1),
+    errors="coerce"
+)
+# em string no formato
+todos["data"] = todos["data"].dt.strftime("%d/%m/%Y")
+
+# agrupar os meses
+df_custeio = todos[["data", "codIbge", "VlCusteio", "AreaCusteio"]].groupby(["data", "codIbge"]).agg(
+    soma_custeio = ("VlCusteio", "sum"),
+    soma_area_custeio = ("AreaCusteio", "sum")
 ).reset_index()
 
-df_custeio.columns = ["cod_ibge", "VlCusteio"]
+df_custeio.columns = ["data", "cod_ibge", "VlCusteio", "AreCusteio"]
 
 # merge com os dados originais
-df = df.merge(df_custeio, on='cod_ibge', how='left')
+df = df.merge(df_custeio, on=['cod_ibge', 'data'], how='left')
+
 #importar produção agricola
 df_prod_agricola = pd.read_excel('producao_agricola.xlsx', 
                                  index_col=[0,1],
@@ -159,6 +170,4 @@ df_milho.rename(columns={"uf": "uf_oficial", "preco_medio": "preco_milho"}, inpl
 # merge com precos do milho
 df = df.merge(df_milho[["data", "uf_oficial", "preco_milho"]], on=["data", "uf_oficial"], how="left")
 
-colunas = ['cfop', 'codfil', 'cod_ibge', 'cod', 'qcom', 'ano', 'mes', 'data', 
-'preco_feijao', 'preco_laranja', 'preco_trigo', 'preco_soja', 'preco_milho']
-df_final = df.loc[:,colunas]
+df.to_parquet("df_vendas.parquet", index=False)
