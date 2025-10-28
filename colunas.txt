@@ -1,24 +1,27 @@
-Quero fazer um relatório relacionado quantidade vendida e outras variáveis socieconomicas. 
-Teste de sazonalidade, autocorrelação e correlação. Com gráficos e explicação.
-	
- 0   venda                                    quantidade vendida
- 1   aquisicao_imob                           valor de aquisição de imoveis
- 2   contrucao_imobiliaria                    valor construção imobiliária
- 3   IBC_atividade_economica                  indice de atividade econômica
- 4   ind_custo_credito                        indice de custo de crédito
+ 0   venda                                    Quantidade vendida
+ 1   aquisicao_imob                           Valor de aquisição de imóveis
+ 2   contrucao_imobiliaria                    Valor construção imobiliária
+ 3   IBC_atividade_economica                  Índice de atividade econômica
+ 4   ind_custo_credito                        Índice de custo de crédito
  5   geral_ipca                               IPCA geral
- 6   ipca_artigos_residencia                  IPCA de artigos residênciais
- 7   reforma_ou_ampliacao                     valor reforma ou ampliação
- 8   tax_desocupacao                          taxa de desocupação
- 9   inadimplencia                            taxa de inadimplencia dos créditos total
- 10  fabri_eletrodomesticos                   fabricação de eletrodomêsticos
- 11  fabricacao_fogoes_refrig_maq_lavar_seca  fabricação de fogoes e refrigerados e máquinas de levar
- 12  fabri_outros_eletrodomesticos            fabricação de outros eletrodomêsticos
- 13  concessoes_crédito_milhoes               concessoes de crédito
- 14  taxa_media_mensal_operacoes_credito      taxa média mensal das operações crédito
- 15  consumo_eletrico_quantGWh                consumo eletrico
- 16  intencao_consumo_familia                 intenção de consumo familiar
- 17  rendimento_real_medio                    rendimento real médio 
- 18  renda_nacional_disponivel_mi             renda nacional disponivel
- 19  paridade_compra_salario                  paridade do poder de compra
- 20  endividamento_familias                   endividamento das familias
+ 6   ipca_artigos_residencia                  IPCA de artigos residenciais
+ 7   reforma_ou_ampliacao                     Valor reforma ou ampliação
+ 8   tax_desocupacao                          Taxa de desocupação
+ 9   inadimplencia                            Taxa de inadimplencia dos créditos totais
+ 10  fabri_eletrodomesticos                   Fabricação de eletrodomésticos
+ 11  fabricacao_fogoes_refrig_maq_lavar_seca  Fabricação de fogões, refrigerados e máquinas de levar/secar
+ 12  fabri_outros_eletrodomesticos            Fabricação de outros eletrodomésticos
+ 13  concessoes_crédito_milhoes               Concessões de crédito (milhões)
+ 14  taxa_media_mensal_operacoes_credito      Taxa média mensal das operações crédito
+ 15  consumo_eletrico_quantGWh                Consumo elétrico (em GWh)
+ 16  intencao_consumo_familia                 Intenção de consumo das famílias
+ 17  rendimento_real_medio                    Rendimento real médio 
+ 18  renda_nacional_disponivel_mi             Renda nacional disponível (em milhões)
+ 19  paridade_compra_salario                  Paridade do poder de compra do salário
+ 20  endividamento_familias                   Endividamento das famílias
+ 21  selic				      Taxa mensal da selic
+ 22  ICCSAS				      Índice de Confiança do Consumidor sem Ajuste Sazonal
+ 23  ICCSPSAS				      Índice de Confiança do Consumidor - Situação Presente sem Ajuste Sazonal
+ 24  ICCESAS				      Índice de Confiança do Consumidor - Expectativas sem Ajuste Sazonal
+ 25  ICCSPCAS				      Índice de Confiança do Consumidor - Situação Presente com Ajuste Sazonal
+ 26  ICCEAS				      Índice de Confiança do Consumidor - Expectativas com Ajuste Sazonal
